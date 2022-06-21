@@ -1,0 +1,39 @@
+//touch avançado
+const int touch = 5;
+const int ledVermelho = 8;
+const int ledBranco = 6;
+const int interruptor = 4;
+const int interruptorLer = 7;
+int est;
+int apg;
+void setup() {
+pinMode (touch, INPUT);
+pinMode (ledVermelho, OUTPUT);
+pinMode (interruptor, OUTPUT);
+pinMode (interruptor, INPUT);
+pinMode (ledBranco, OUTPUT);
+}
+
+void loop() {
+  est = digitalRead(touch);
+  apg = digitalRead(interruptorLer);
+  if (est == HIGH){
+    digitalWrite(ledVermelho, HIGH);
+  }
+  else{
+    digitalWrite(ledVermelho, LOW);
+  }
+
+  if (est == LOW){
+    digitalWrite(interruptor, HIGH);
+  }
+  else{
+  digitalWrite(interruptor, LOW);
+  }
+  if (apg == HIGH){
+    digitalWrite (ledBranco, HIGH);
+  }
+  else{
+    digitalWrite (ledBranco, LOW);
+  }
+}
